@@ -1,0 +1,11 @@
+<ref>
+    <syntax>
+        <name>Backtick</name>
+        <code>`</code>
+        <desc>Formats a piece of text as inline computer code.</desc>
+    </syntax>
+    <syntax>
+        <name>4-Space Indent</name>
+        <desc>Formats an entire paragraph as computer code. Some engines colourise it.</desc>
+    </syntax>
+</ref>
