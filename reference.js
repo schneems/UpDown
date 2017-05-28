@@ -6,3 +6,34 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "reference.xml", true);
 xhttp.send();
+
+function processXML(xmlOut) {
+    var xml = xmlOut.responseXML;
+    var x = xml.documentElement.childNodes;
+    var htmlOut = document.getElementById("referencecontent")
+    for (i = 0; i < x.length; i++) {
+        var el = x[i];
+        htmlOut.innerHTML += "<div>";
+        var inner = el.childNodes;
+        for (ii = 0; ii < x.length; ii++) {
+            var innerel = inner[ii];
+            switch (innerel.nodeName) {
+                case "name": 
+                    htmlOut.innerHTML += "<h2>";
+                    htmlOut.innerHTML += innerel.childNodes[0].nodeValue;
+                    htmlOut.innerHTML += "</h2>";
+                    break;
+                case "code":
+                    htmlOut.innerHTML += "Syntax item: <code>";
+                    htmlOut.innerHTML += innerel.childNodes[0].nodeValue;
+                    htmlOut.innerHTML += "</code>";
+                    break;
+                case "desc":
+                    htmlOut.innerHTML += "<p>";
+                    htmlOut.innerHTML += innerel.childNodes[0].nodeValue;
+                    htmlOut.innerHTML += "</p>";
+            }
+        }
+        htmlOut.innerHTML += "</div>";
+    }
+}
