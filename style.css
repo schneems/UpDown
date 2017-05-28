@@ -1,0 +1,17 @@
+@keyframes bg {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: green;
+  }
+}
+body {
+  color: grey;
+  animation: bg;
+  -webkit-animation: bg;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+  animation-direction: forward;
+  -webkit-animation-direction: forward;
+ }
