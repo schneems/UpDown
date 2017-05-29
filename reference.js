@@ -1,12 +1,3 @@
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    processXML(this);
-    }
-};
-xhttp.open("GET", "reference.xml", true);
-xhttp.send();
-
 function processXML(xmlOut) {
     var xml = xmlOut.responseXML;
     var x = xml.documentElement.childNodes;
@@ -37,3 +28,12 @@ function processXML(xmlOut) {
         htmlOut.innerHTML += "</div>";
     }
 }
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    processXML(this);
+    }
+};
+xhttp.open("GET", "reference.xml", true);
+xhttp.send();
