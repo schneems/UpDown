@@ -1,6 +1,27 @@
+var reBlank = /^\s*$/;
+function xmlfix(node) {
+    var child, next;
+    switch (node.nodeType) {
+        case 3: // Text node
+            if (reBlank.test(node.nodeValue)) {
+                node.parentNode.removeChild(node);
+            }
+            break;
+        case 1: // Element node
+        case 9: // Document node
+            child = node.firstChild;
+            while (child) {
+                next = child.nextSibling;
+                xmlfix(child);
+                child = next;
+            }
+            break;
+    }
+}
 function processXML(xmlOut) {
     var xml = xmlOut.responseXML;
     var x = xml.documentElement.childNodes;
+    xmlfix(x);
     var htmlOut = document.getElementById("referencecontent");
     var i;
     for (i = 0; i < x.length; i++) {
