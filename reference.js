@@ -1,11 +1,13 @@
 function processXML(xmlOut) {
     var xml = xmlOut.responseXML;
     var x = xml.documentElement.childNodes;
-    var htmlOut = document.getElementById("referencecontent")
+    var htmlOut = document.getElementById("referencecontent");
+    var i;
     for (i = 0; i < x.length; i++) {
         var el = x[i];
         htmlOut.innerHTML += "<div>";
         var inner = el.childNodes;
+        var ii;
         for (ii = 0; ii < x.length; ii++) {
             var innerel = inner[ii];
             switch (innerel.nodeName) {
