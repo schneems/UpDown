@@ -16,7 +16,7 @@
 		</table>
 		<script>
 		function updatePreview() {
-			if editor.getValue().length > 0 {
+			if (editor.getValue().length > 0) {
         			var converter = new Showdown.converter();
         			var ret = converter.makeHtml(editor.getValue());
         			document.getElementById("preview-container").innerHTML = ret;
