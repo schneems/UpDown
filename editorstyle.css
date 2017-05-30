@@ -20,3 +20,6 @@ body {
   -webkit-animation-direction: forward;
  }
 
+table {
+  table-layout: fixed;
+}
