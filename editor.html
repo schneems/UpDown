@@ -11,7 +11,7 @@
 	<body>
 		<h1>Markdown Editor</h1>
 		<table style="width: 100%; height: 100%">
-			<tr><th>Edit</th><th>Preview</th></tr>
+			<tr><th>Edit</th><th id="preview-header">Preview</th></tr>
 			<tr><td id="codemirror-container"></td><td id="preview-container"></td></tr>
 		</table>
 		<script>
@@ -22,8 +22,13 @@
         			document.getElementById("preview-container").innerHTML = ret;
 				document.getElementById("codemirror-container").setAttribute("width", "50%");
 				document.getElementById("preview-container").setAttribute("width", "50%");
+				document.getElementById("preview-container").setAttribute("style", "display: block")
+				document.getElementById("preview-header").setAttribute("style", "display: block")
 			} else {
 				document.getElementById("preview-container").setAttribute("width", "0%");
+				document.getElementById("codemirror-container").setAttribute("width", "100%");
+				document.getElementById("preview-container").setAttribute("style", "display: none")
+				document.getElementById("preview-header").setAttribute("style", "display: none")
 			}
 		}
 		
