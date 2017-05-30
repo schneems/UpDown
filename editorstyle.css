@@ -23,3 +23,7 @@ body {
 table {
   table-layout: fixed;
 }
+td, th {
+  transition: width 2s;
+  -webkit-transition: width 2s;
+}
