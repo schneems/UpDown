@@ -15,14 +15,16 @@
 			<tr><td id="codemirror-container"></td><td id="preview-container"></td></tr>
 		</table>
 		<script>
+		function updatePreview() {
+        		var converter = new Showdown.converter();
+        		var ret = converter.makeHtml(editor.getValue());
+        		document.getElementById("preview-container").innerHTML = ret;
+		}
+		
 		var editor = CodeMirror(document.getElementById("codemirror-container"), {
 		lineNumbers: true
 		});
-		</script>
-		<script>
-        	var converter = new Showdown.converter();
-        	var ret = converter.makeHtml("#hello markdown!");
-        	document.getElementById("preview-container").innerHTML=ret
+		editor.on("change", updatePreview);
 		</script>
 	</body>
 </html>
