@@ -10,18 +10,19 @@
 	</head>
 	<body>
 		<h1>Markdown Editor</h1>
-	<table style="width: 100%; height: 100%">
-		<tr><th>Edit</th><th>Preview</th></tr>
-		<tr><td id="codemirror-container"></td><td id="preview-container"></td></tr>
-	</table>
+		<table style="width: 100%; height: 100%">
+			<tr><th>Edit</th><th>Preview</th></tr>
+			<tr><td id="codemirror-container"></td><td id="preview-container"></td></tr>
+		</table>
 		<script>
 		var editor = CodeMirror(document.getElementById("codemirror-container"), {
-	lineNumbers: true
-	});
+		lineNumbers: true
+		});
 		</script>
 		<script>
-        var converter = new Showdown.converter();
-        var ret = converter.makeHtml("#hello markdown!");
-        document.getElementById("preview-container").innerHTML=ret
+        	var converter = new Showdown.converter();
+        	var ret = converter.makeHtml("#hello markdown!");
+        	document.getElementById("preview-container").innerHTML=ret
+		</script>
 	</body>
 </html>
