@@ -12,7 +12,7 @@
 		<h1>Markdown Editor</h1>
 		<table style="width: 100%; height: 100%">
 			<tr><th>Edit</th><th id="preview-header" style="display: none">Preview</th></tr>
-			<tr><td id="codemirror-container"></td><td id="preview-container" style="display:none"></td></tr>
+			<tr><td id="codemirror-container"></td><td id="preview-container"></td></tr>
 		</table>
 		<script>
 		function updatePreview() {
@@ -20,15 +20,11 @@
         		var converter = new Showdown.converter();
         		var ret = converter.makeHtml(editor.getValue());
         		document.getElementById("preview-container").innerHTML = ret;
-			    document.getElementById("preview-container").setAttribute("style", "display: block");
-			    document.getElementById("preview-header").setAttribute("style", "display: block");
                 document.getElementById("preview-container").setAttribute("style", "width: initial");
                 document.getElementById("preview-header").setAttribute("style", "width: initial");
 			} else {
                 document.getElementById("preview-container").setAttribute("style", "width: 0px");
                 document.getElementById("preview-header").setAttribute("style", "width: 0px");
-				document.getElementById("preview-container").setAttribute("style", "display: none");
-				document.getElementById("preview-header").setAttribute("style", "display: none");
 			}
 		}
 		
