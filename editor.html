@@ -20,15 +20,15 @@
         		var converter = new Showdown.converter();
         		var ret = converter.makeHtml(editor.getValue());
         		document.getElementById("preview-container").innerHTML = ret;
-				document.getElementById("preview-container").setAttribute("style", "display: block")
-				document.getElementById("preview-header").setAttribute("style", "display: block")
-                document.getElementById("preview-container").setAttribute("style", "width: initial")
-                document.getElementById("preview-header").setAttribute("style", "width: initial")
+			    document.getElementById("preview-container").setAttribute("style", "display: block");
+			    document.getElementById("preview-header").setAttribute("style", "display: block");
+                document.getElementById("preview-container").setAttribute("style", "width: initial");
+                document.getElementById("preview-header").setAttribute("style", "width: initial");
 			} else {
-                document.getElementById("preview-container").setAttribute("style", "width: 0px")
-                document.getElementById("preview-header").setAttribute("style", "width: 0px")
-				document.getElementById("preview-container").setAttribute("style", "display: none")
-				document.getElementById("preview-header").setAttribute("style", "display: none")
+                document.getElementById("preview-container").setAttribute("style", "width: 0px");
+                document.getElementById("preview-header").setAttribute("style", "width: 0px");
+				document.getElementById("preview-container").setAttribute("style", "display: none");
+				document.getElementById("preview-header").setAttribute("style", "display: none");
 			}
 		}
 		
