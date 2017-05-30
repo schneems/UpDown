@@ -20,13 +20,9 @@
         			var converter = new Showdown.converter();
         			var ret = converter.makeHtml(editor.getValue());
         			document.getElementById("preview-container").innerHTML = ret;
-				document.getElementById("codemirror-container").setAttribute("width", "50%");
-				document.getElementById("preview-container").setAttribute("width", "50%");
 				document.getElementById("preview-container").setAttribute("style", "display: block")
 				document.getElementById("preview-header").setAttribute("style", "display: block")
 			} else {
-				document.getElementById("preview-container").setAttribute("width", "0%");
-				document.getElementById("codemirror-container").setAttribute("width", "100%");
 				document.getElementById("preview-container").setAttribute("style", "display: none")
 				document.getElementById("preview-header").setAttribute("style", "display: none")
 			}
