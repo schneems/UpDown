@@ -16,9 +16,14 @@
 		</table>
 		<script>
 		function updatePreview() {
-        		var converter = new Showdown.converter();
-        		var ret = converter.makeHtml(editor.getValue());
-        		document.getElementById("preview-container").innerHTML = ret;
+			if editor.getValue().length > 0 {
+        			var converter = new Showdown.converter();
+        			var ret = converter.makeHtml(editor.getValue());
+        			document.getElementById("preview-container").innerHTML = ret;
+				document.getElementById("codemirror-container").setAttribute("width", "50%")
+				document.getElementById("preview-container").setAttribute("width", "50%")
+			} else {
+				document.getElementById("preview-container").setAttribute("width", "0%")
 		}
 		
 		var editor = CodeMirror(document.getElementById("codemirror-container"), {
