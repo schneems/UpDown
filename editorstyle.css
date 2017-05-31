@@ -26,17 +26,20 @@ body {
 table {
   table-layout: fixed;
 }
+#preview-content {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
 .hidden {
   width: 0;
-  display: block;
   transition: width 2s;
   -webkit-transition: width 2s;
   -moz-transition: width 2s;
   -o-transition: width 2s;
 }
 .nothidden {
-  width: initial;
-  display: block;
+  width: 50%;
   transition: width 2s;
   -webkit-transition: width 2s;
   -moz-transition: width 2s;
