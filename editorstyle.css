@@ -14,22 +14,29 @@ body {
   background-color: grey;
   animation: bg;
   -webkit-animation: bg;
+  -moz-animation: bg;
   animation-duration: 5s;
   -webkit-animation-duration: 5s;
-  animation-direction: forward;
-  -webkit-animation-direction: forward;
+  -moz-animation-duration: 5s;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
  }
 
 table {
   table-layout: fixed;
 }
-td, th {
+.hidden {
+  width: 0;
   transition: width 2s;
   -webkit-transition: width 2s;
-}
-.hidden {
-  width: 0px;
+  -moz-transition: width 2s;
+  -o-transition: width 2s;
 }
 .nothidden {
   width: initial;
+  transition: width 2s;
+  -webkit-transition: width 2s;
+  -moz-transition: width 2s;
+  -o-transition: width 2s;
 }
