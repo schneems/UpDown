@@ -27,3 +27,9 @@ td, th {
   transition: width 2s;
   -webkit-transition: width 2s;
 }
+.hidden {
+  width: 0px;
+}
+.nothidden {
+  width: initial;
+}
