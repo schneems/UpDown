@@ -11,8 +11,8 @@
 	<body>
 		<h1>Markdown Editor</h1>
 		<table style="width: 100%; height: 100%">
-			<tr><th>Edit</th><th id="preview-header" style="width: 0px"></th></tr>
-			<tr><td id="codemirror-container"></td><td id="preview-container" style="width: 0px"></td></tr>
+			<tr><th>Edit</th><th id="preview-header" class="hidden"></th></tr>
+			<tr><td id="codemirror-container"></td><td id="preview-container" class="hidden"></td></tr>
 		</table>
 		<script>
 		function updatePreview() {
@@ -20,13 +20,13 @@
         		        var converter = new Showdown.converter();
         		        var ret = converter.makeHtml(editor.getValue());
         		        document.getElementById("preview-container").innerHTML = ret;
-                                document.getElementById("preview-container").setAttribute("style", "width: initial");
-                                document.getElementById("preview-header").setAttribute("style", "width: initial");
+                                document.getElementById("preview-container").setAttribute("class", "nothidden");
+                                document.getElementById("preview-header").setAttribute("class", "nothidden");
 				document.getElementById("preview-header").innerHTML = "Preview";
 			} else {
                                 document.getElementById("preview-container").innerHTML = "";
-                                document.getElementById("preview-container").setAttribute("style", "width: 0px");
-                                document.getElementById("preview-header").setAttribute("style", "width: 0px");
+                                document.getElementById("preview-container").setAttribute("class", "hidden");
+                                document.getElementById("preview-header").setAttribute("class", "hidden");
 				document.getElementById("preview-header").innerHTML = "";
 			}
 		}
