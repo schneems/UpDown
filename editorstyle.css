@@ -28,6 +28,7 @@ table {
 }
 .hidden {
   width: 0;
+  display: block;
   transition: width 2s;
   -webkit-transition: width 2s;
   -moz-transition: width 2s;
@@ -35,6 +36,7 @@ table {
 }
 .nothidden {
   width: initial;
+  display: block;
   transition: width 2s;
   -webkit-transition: width 2s;
   -moz-transition: width 2s;
