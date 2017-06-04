@@ -28,7 +28,7 @@ function processXML(xmlOut) {
         var el = x[i];
         var inner = el.childNodes;
         var divOut = document.createElement("div");
-        htmlOut.appendChlid(divOut)
+        htmlOut.appendChild(divOut);
         var ii;
         for (ii = 0; ii < inner.length; ii++) {
             var innerel = inner[ii];
