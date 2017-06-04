@@ -42,6 +42,7 @@ function processXML(xmlOut) {
                     html2 = document.createElement("p");
                     html2.appendChild(document.createTextNode("Syntax: "));
                     var pre = document.createElement("pre");
+                    html2.appendChild(pre);
                     var code = document.createElement("code");
                     pre.appendChild(code);
                     code.appendChild(document.createTextNode(innerel.childNodes[0].nodeValue));
