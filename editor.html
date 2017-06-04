@@ -20,15 +20,19 @@
 			if (editor.getValue().length > 0) {
         		        var converter = new Showdown.converter();
         		        var ret = converter.makeHtml(editor.getValue());
-        		        document.getElementById("preview-container").innerHTML = ret;
-                                document.getElementById("preview-container").setAttribute("class", "nothidden");
-                                document.getElementById("preview-header").setAttribute("class", "nothidden");
-				document.getElementById("preview-header").innerHTML = "Preview";
+                                setTimeout(function () {
+        		                document.getElementById("preview-container").innerHTML = ret;
+                                        document.getElementById("preview-container").setAttribute("class", "nothidden");
+                                        document.getElementById("preview-header").setAttribute("class", "nothidden");
+			         	document.getElementById("preview-header").innerHTML = "Preview";
+                                }, 5000);
 			} else {
-                                document.getElementById("preview-container").innerHTML = "";
-                                document.getElementById("preview-container").setAttribute("class", "hidden");
-                                document.getElementById("preview-header").setAttribute("class", "hidden");
-				document.getElementById("preview-header").innerHTML = "";
+                                setTimeout(function () {
+                                        document.getElementById("preview-container").innerHTML = "";
+                                        document.getElementById("preview-container").setAttribute("class", "hidden");
+                                        document.getElementById("preview-header").setAttribute("class", "hidden");
+			         	document.getElementById("preview-header").innerHTML = "";
+                                }, 5000);
 			}
 		}
 		
