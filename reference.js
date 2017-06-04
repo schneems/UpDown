@@ -26,39 +26,38 @@ function processXML(xmlOut) {
     var i;
     for (i = 0; i < x.length; i++) {
         var el = x[i];
-        htmlOut.innerHTML += "<div>";
         var inner = el.childNodes;
+        var divOut = document.createElement("div");
+        htmlOut.appendChlid(divOut)
         var ii;
         for (ii = 0; ii < inner.length; ii++) {
             var innerel = inner[ii];
-            var html1 = "";
-            var html2 = "";
-            var html3 = "";
+            var html1, html2, html3;
             switch (innerel.nodeName) {
                 case "name": 
-                    html1 += "<h2>";
-                    html1 += innerel.childNodes[0].nodeValue;
-                    html1 += "</h2>";
+                    html1 = document.createElement("h2");
+                    html1.appendChild(document.createTextNode(innerel.childNodes[0].nodeValue));
                     break;
                 case "code":
-                    html2 += "Syntax item: <code>";
-                    html2 += innerel.childNodes[0].nodeValue;
-                    html2 += "</code>";
+                    html2 = document.createElement("p");
+                    html2.appendChild(document.createTextNode("Syntax: "));
+                    var pre = document.createElement("pre");
+                    var code = document.createElement("code");
+                    pre.appendChild(code);
+                    code.appendChild(document.createTextNode(innerel.childNodes[0].nodeValue));
                     break;
                 case "desc":
-                    html3 += "<p>";
-                    html3.innerHTML += innerel.childNodes[0].nodeValue;
-                    html3.innerHTML += "</p>";
+                    html3 = document.createElement("p");
+                    html3.appendChild(document.createTextNode(innerel.childNodes[0].nodeValue));
             }
             var htmldat = [html1, html2, html3];
             for (i = 0; i < 3; i++) {
                 var html = htmldat[i];
-                if (html != "") {
-                    htmlOut.innerHTML += html;
+                if (html) {
+                    divOut.appendChild(html);
                 }
             }
         }
-        htmlOut.innerHTML += "</div>";
     }
 }
 
