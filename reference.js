@@ -40,7 +40,7 @@ function processXML(xmlOut) {
                     break;
                 case "code":
                     html2 = document.createElement("p");
-                    html2.appendChild(document.createTextNode("Syntax: "));
+                    html2.appendChild(document.createTextNode("Syntax example: "));
                     var pre = document.createElement("pre");
                     html2.appendChild(pre);
                     var code = document.createElement("code");
