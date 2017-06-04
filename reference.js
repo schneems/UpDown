@@ -31,21 +31,31 @@ function processXML(xmlOut) {
         var ii;
         for (ii = 0; ii < inner.length; ii++) {
             var innerel = inner[ii];
+            var html1 = "";
+            var html2 = "";
+            var html3 = "";
             switch (innerel.nodeName) {
                 case "name": 
-                    htmlOut.innerHTML += "<h2>";
-                    htmlOut.innerHTML += innerel.childNodes[0].nodeValue;
-                    htmlOut.innerHTML += "</h2>";
+                    html1 += "<h2>";
+                    html1 += innerel.childNodes[0].nodeValue;
+                    html1 += "</h2>";
                     break;
                 case "code":
-                    htmlOut.innerHTML += "Syntax item: <code>";
-                    htmlOut.innerHTML += innerel.childNodes[0].nodeValue;
-                    htmlOut.innerHTML += "</code>";
+                    html2 += "Syntax item: <code>";
+                    html2 += innerel.childNodes[0].nodeValue;
+                    html2 += "</code>";
                     break;
                 case "desc":
-                    htmlOut.innerHTML += "<p>";
-                    htmlOut.innerHTML += innerel.childNodes[0].nodeValue;
-                    htmlOut.innerHTML += "</p>";
+                    html3 += "<p>";
+                    html3.innerHTML += innerel.childNodes[0].nodeValue;
+                    html3.innerHTML += "</p>";
+            }
+            var htmldat = [html1, html2, html3];
+            for (i = 0; i < 3; i++) {
+                var html = htmldat[i];
+                if (html != "") {
+                    htmlOut += html;
+                }
             }
         }
         htmlOut.innerHTML += "</div>";
