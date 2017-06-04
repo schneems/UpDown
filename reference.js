@@ -29,7 +29,7 @@ function processXML(xmlOut) {
         htmlOut.innerHTML += "<div>";
         var inner = el.childNodes;
         var ii;
-        for (ii = 0; ii < x.length; ii++) {
+        for (ii = 0; ii < inner.length; ii++) {
             var innerel = inner[ii];
             switch (innerel.nodeName) {
                 case "name": 
