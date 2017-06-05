@@ -30,6 +30,7 @@ table {
   background-color: white;
   border-radius: 5px;
   border: 1px solid grey;
+  overflow: auto;
 }
 .hidden {
   width: 0;
